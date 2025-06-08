@@ -121,11 +121,11 @@ EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
   CODIGOS USADOS NOS TESTES 
-Docker stop api_gs oracle_gs
-Docker rm api_gs oracle_gs
-Docker run --detach --publish 1521:1521 --name oracle_gs --network gs_network --volume volume_gs:/var/lib/oracle --env ORACLE_PASSWORD=ViniFiap123 --env ORACLE_DATABASE=GS_JAVA --env APP_USER=Marcos --env APP_USER_PASSWORD=ViniFiap123 gvenzl/oracle-xe
-Docker image ls
-docker run --detach --publish 8080:8080 --name api_gs --network gs_network --env DB_URL=jdbc:oracle:thin:@oracle_gs:1521/XEPDB1 --env DB_USER=Marcos --env DB_PASS=ViniFiap123 java_gs
-Docker logs -f api_gs
+- Docker stop api_gs oracle_gs
+- Docker rm api_gs oracle_gs
+- Docker run --detach --publish 1521:1521 --name oracle_gs --network gs_network --volume volume_gs:/var/lib/oracle --env ORACLE_PASSWORD=ViniFiap123 --env ORACLE_DATABASE=GS_JAVA --env APP_USER=Marcos --env APP_USER_PASSWORD=ViniFiap123 gvenzl/oracle-xe
+- Docker image ls
+- docker run --detach --publish 8080:8080 --name api_gs --network gs_network --env DB_URL=jdbc:oracle:thin:@oracle_gs:1521/XEPDB1 --env DB_USER=Marcos --env DB_PASS=ViniFiap123 java_gs
+- Docker logs -f api_gs
 
-Video Cloud: https://youtu.be/MqFkaC-wn5k
+- Video Cloud: https://youtu.be/MqFkaC-wn5k
